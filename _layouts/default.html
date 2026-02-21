@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{% if page.title %}
+    {{ page.title }} | Etern4l
+  {% else %}
+    Etern4l | Red Team & CTF Writeups
+  {% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Red Team, CTF Writeups and Offensive Security Research by ETERN4L.{% endif %}">
+
+<meta property="og:title" content="{{ page.title | default: 'ETERN4L' }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Red Team & CTF Writeups{% endif %}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/images/logonav.png' | absolute_url }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: 'ETERN4L' }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Red Team & CTF Writeups{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  <meta name="theme-color" content="#030204">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="brand">
+  <a href="{{ '/' | relative_url }}" class="brand-link">
+  <img src="{{ '/assets/images/logonav.png' | relative_url }}">
+  <div class="logo">ETERN4L</div>
+  </a>
+</div>
+
+  
+  <ul>
+    <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+    <li><a href="{{ '/writeups/' | relative_url }}">Writeups</a></li>
+    <li><a href="#">Tools</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<main class="page-content">
+  {{ content }}
+</main>
+
+<footer>
+ <p>
+    <a href="https://github.com/Etern4lx" target="_blank">GitHub</a> •
+    <a href="https://www.youtube.com/@Etern4l1" target="_blank">YouTube</a> •
+  </p>
+  <p>© 2026 ETERN4L</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero fade-in">
+  <div class="hero-left">
+    <img src="{{ '/assets/avatar.png' | relative_url }}" alt="avatar">
+  </div>
+  <div class="hero-right">
+    <h1>Red Team</h1>
+    <h1>CTF Writeups</h1>
+  </div>
+</section>
+
+<div class="hero-divider"></div>
+
+<section class="recent fade-in">
+  <h2>Recent Writeups</h2>
+  <div class="cards">
+   {% for post in site.posts limit:3 %}
+  <a href="{{ post.url | relative_url }}" class="card-link">
+    <div class="card">
+
+      <h3>{{ post.title }}</h3>
+
+      <p class="date">
+        {{ post.date | date: "%b %Y" }}
+      </p>
+
+      <p class="card-excerpt">
+        {{ post.description | default: post.excerpt | strip_html | truncate: 140 }}
+      </p>
+
+    </div>
+  </a>
+{% endfor %}
+</section>

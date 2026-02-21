@@ -1,0 +1,397 @@
+/* =======================================================
+   GLOBAL
+======================================================= */
+
+body {
+  margin: 0;
+  background-color: #030204;
+  color: #e6e6e6;
+  font-family: Arial, sans-serif;
+}
+
+/* =======================================================
+   NAVBAR
+======================================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Línea degradada inferior */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ff1a1a, transparent);
+}
+
+/* Logo */
+.navbar .logo {
+  color: #ff1a1a;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+/* Links navbar */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #999;
+  font-size: 15px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.navbar a:hover {
+  color: #ff1a1a;
+}
+
+/* Subrayado animado */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 1px;
+  background: #ff1a1a;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  opacity: 0.8;
+}
+
+/* =======================================================
+   HERO
+======================================================= */
+
+.hero {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.hero img {
+  width: 600px;
+}
+
+.hero-right h1 {
+  font-size: 56px;
+  font-weight: 500;
+  margin: 15px 0;
+  letter-spacing: 1px;
+}
+
+.hero-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ff0000, transparent);
+  margin: 30px 0;
+}
+
+/* =======================================================
+   RECENT WRITEUPS
+======================================================= */
+
+.recent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 0 60px 0;
+}
+
+.recent h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.recent h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #ff1a1a;
+  margin: 15px auto 0 auto;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  background: #0a0a0a;
+  padding: 30px;
+  width: 320px;
+  border: 1px solid #141414;
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  border: 1px solid #ff1a1a;
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 26, 26, 0.15);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card .date {
+  color: #888;
+  font-size: 14px;
+}
+
+.card-excerpt {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* =======================================================
+   WRITEUPS PAGE GRID
+======================================================= */
+
+.writeups-page {
+  max-width: 1100px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.writeups-page h1 {
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+.writeups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.writeup-card {
+  background: #0a0a0a;
+  padding: 40px;
+  border: 1px solid #111;
+  transition: 0.3s ease;
+}
+
+.writeup-card:hover {
+  border-color: #ff1a1a;
+  transform: translateY(-6px);
+}
+
+.writeup-card a {
+  text-decoration: none;
+  color: #e6e6e6;
+  font-weight: 500;
+}
+
+.writeup-card a:hover {
+  color: #ff1a1a;
+}
+
+/* =======================================================
+   POST CONTENT
+======================================================= */
+
+.post-content {
+  max-width: 900px;
+  margin: 80px auto;
+  line-height: 1.8;
+
+}
+
+.post-content h1 {
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+
+.post-content h2 {
+  margin-top: 50px;
+  border-bottom: 1px solid rgba(255,0,0,0.3);
+  padding-bottom: 8px;
+}
+
+/* Código */
+.post-content pre {
+  background: #0d0d0d;
+  padding: 15px;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+.post-content code {
+  color: #2bff00;
+}
+
+/* Enlaces dentro del post */
+.post-content a {
+  color: #ff1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.post-content a:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ff1a1a;
+ 
+}
+
+.post-content a:visited {
+  color: #ff1a1a;
+}
+
+/* Imágenes dentro del post */
+.post-content img {
+  max-width: 100%;
+  display: block;
+  margin: 30px auto;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(255,0,0,0.1);
+}
+
+/* =======================================================
+   TAGS (CORREGIDO PARA QUE NO SE CORTEN)
+======================================================= */
+
+.post-tags {
+   margin: 20px 0 40px 0;
+  
+}
+
+.tag {
+  display: inline-flex;          /*  clave */
+  align-items: center;           /* centra verticalmente */
+  margin: 6px 10px 6px 0;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  outline: 1px solid #ff1a1a; 
+  color: #ff1a1a;
+  text-decoration: none;
+  line-height: 1;                /* evita colapso */
+  box-sizing: border-box;        /* evita cortes raros */
+  transition: 0.3s ease;
+}
+
+.tag:hover {
+  background: #ff1a1a;
+  color: #000;
+}
+
+/* Página índice de tags */
+.tag-index {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tag-link {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 6px 14px;
+  border: 1px solid #ff1a1a;
+  color: #ff1a1a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.tag-link:hover {
+  background: #ff1a1a;
+  color: #000;
+}
+
+/* =======================================================
+   FOOTER
+======================================================= */
+
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #1a1a1a;
+  color: #666;
+}
+
+footer a {
+  color: #999;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff1a1a;
+}
+
+
+/* =======================================================
+   FADE IN GLOBAL
+======================================================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

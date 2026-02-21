@@ -1,0 +1,41 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<section class="writeups-page">
+  <h1>Tags</h1>
+
+  <!-- Tag index -->
+  <div class="tag-index">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <a href="#{{ tag[0] }}" class="tag-link">
+        {{ tag[0] }} ({{ tag[1].size }})
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Tag sections -->
+  {% for tag in tags %}
+    <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+
+    <div class="writeups-grid">
+      {% for post in tag[1] %}
+        <div class="writeup-card">
+          <h3>
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+          </h3>
+          <p>{{ post.date | date: "%b %Y" }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="divider"></div>
+  {% endfor %}
+</section>
